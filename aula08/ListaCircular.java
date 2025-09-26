@@ -34,4 +34,33 @@ public class ListaCircular<T>{
             tamanho ++;
         }
     }
+
+    public void addFinal(T dado){
+        No<T> novoNo = new No<T>(dado);
+        if(ultimoNo == null){
+            primeiroNo = novoNo;
+            ultimoNo = novoNo;
+            novoNo.setNextNo(novoNo);
+        } 
+        else{
+            novo.setNextNo(primeiroNo);
+            ultimoNo.setNextNo(novoNo);
+            ultimoNo = novoNo;
+                    }
+                    tamanho++;
+    }
+    public T removeInicio(){
+        if(primeiroNo == null){
+            System.out.println("Lista vazia!");
+            return null; 
+        }else{
+            T dadoTemp = primeiroNo.getDado();
+            if(primeiroNo == primeiroNo.getNextNo()){
+                primeiroNo = null;
+                ultimoNo = null;
+            }
+            }
+
+            //completar!!!! //
+    }
 }
