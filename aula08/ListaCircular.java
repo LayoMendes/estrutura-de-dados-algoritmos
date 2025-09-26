@@ -19,6 +19,19 @@ public class ListaCircular<T>{
     }
 
     public void addInicio(){
-        
+        No<T> novoNo = new No<T>(dado);
+        if(primeiroNo == null){
+            primeiroNo = novoNo;
+            ultimoNo = novoNo;
+            novoNo.setNextNo(novoNo);
+            tamanho ++;
+            return;
+        }
+        else{
+            novo.setNextNo(primeiroNo);
+            ultimoNo.setNextNo(novoNo);
+            primeiroNo = novoNo;
+            tamanho ++;
+        }
     }
 }
